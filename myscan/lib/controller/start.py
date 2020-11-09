@@ -24,6 +24,7 @@ def handler(signum, frame):
     # raise AssertionError
     logger.warning("run_python timeout")
 
+
 def run_python():
     red = getredis()
     try:
