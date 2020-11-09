@@ -10,8 +10,6 @@ from myscan.lib.helper.request import request  # 修改了requests.request请求
 from myscan.lib.helper.helper_socket import socket_send_withssl, socket_send  # 如果需要，socket的方法封装
 import re
 
-'''误报太高，有待完善'''
-
 
 class POC():
     def __init__(self, workdata):
