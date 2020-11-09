@@ -12,6 +12,7 @@ import re
 
 '''误报太高，有待完善'''
 
+
 class POC():
     def __init__(self, workdata):
         self.dictdata = workdata.get("dictdata")  # python的dict数据，详情请看docs/开发指南Example dict数据示例
