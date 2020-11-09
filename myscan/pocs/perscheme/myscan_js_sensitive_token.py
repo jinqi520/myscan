@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # @Time    : 2020-05-24
 # @Author  : caicai
-# @File    : __myscan_js_sensitive_content.py
+# @File    : myscan_js_sensitive_token.py
 
 
 from myscan.lib.parse.dictdata_parser import dictdata_parser  # 写了一些操作dictdata的方法的类
@@ -19,7 +19,7 @@ class POC():
         # scheme的poc不同perfoler和perfile,没有workdata没有data字段,所以无self.url
         self.result = []  # 此result保存dict数据，dict需包含name,url,level,detail字段，detail字段值必须为dict。如下self.result.append代码
         self.name = "js_sensitive_token"
-        self.vulmsg = "js leak token"
+        self.vulmsg = "leak token"
         self.level = 1  # 0:Low  1:Medium 2:High
 
     def verify(self):
