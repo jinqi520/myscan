@@ -24,7 +24,7 @@ class POC():
 
     def verify(self):
         # 误报太多 这里只取json数据的返回进行校验 放弃命中率来减少误报
-        if self.dictdata.get("url").get("extension").lower() not in ['js', 'css', 'png', 'gif', 'svg', 'jpg'] and "application/json" in self.dictdata.get('response').get('headers').get('Content-Type'):
+        if self.dictdata.get("url").get("extension").lower() not in ['js', 'css', 'png', 'gif', 'svg', 'jpg'] and "Content-Type" in self.dictdata.get('response').get('headers') and "application/json" in self.dictdata.get('response').get('headers').get('Content-Type'):
             parser = dictdata_parser(self.dictdata)
             request_headers_forpayload = self.delcookie_token()
             req = {

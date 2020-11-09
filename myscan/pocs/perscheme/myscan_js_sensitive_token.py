@@ -65,7 +65,7 @@ class POC():
         }
         parser = dictdata_parser(self.dictdata)
         for key in regs:
-            texts = re.findall(regs[key], parser.getresponsebody(), re.M | re.I)
+            texts = re.findall(regs[key], parser.getresponsebody().decode('GBK'), re.M | re.I)
             if texts:
                 texts = list(set(texts))
                 for result in texts:
