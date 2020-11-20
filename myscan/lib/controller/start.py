@@ -110,6 +110,7 @@ def start():
                                 plugin(dictdata)
                             if "all" in cmd_line_options.disable:
                                 continue
+                            # dictdata.get("filter")决定是否过滤，burp的proxy传过来为true，右键发过来为false
                             is_filter = dictdata.get("filter")
                             host = dictdata.get("url").get("host")
                             port = dictdata.get("url").get("port")
@@ -145,6 +146,7 @@ def start():
                                 # perfolder
                                 if cmd_line_options.pocs_perfoler:
                                     if not is_filter:
+                                        # 通过一个url获取其对应的所有目录
                                         folders = data_parser.getperfolders()
                                     else:
                                         folders = data_parser.is_perfolder_doned()

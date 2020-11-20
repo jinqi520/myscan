@@ -43,6 +43,8 @@ class dictdata_parser():
         '''
         return self.url.get("url").split("?")[0]
 
+    # 获取一个url所有的目录
+    # array[:3] 但是不包括最后的login
     def getperfolders(self):
         '''
         return list ，every folder will endwith /
@@ -59,10 +61,12 @@ class dictdata_parser():
         else:
             return []
 
+    # 判断请求是否已经跑过perfile了
     def is_perfile_doned(self):
         '''
         return bool
         '''
+        # 取uri的部分进行hash，sismember判断是否已经在集合中了，如果不在加入集合并返回false
         hashstr = getmd5(self.getperfile())[10:20]
         if not self.red.sismember(self.keys.get("perfile"), hashstr):
             self.red.sadd(self.keys.get("perfile"), hashstr)
