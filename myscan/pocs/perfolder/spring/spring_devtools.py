@@ -51,7 +51,7 @@ class POC():
         }
         r1 = request(**req1)
         r2 = request(**req2)
-        if r1.status_code == 403 and r2.status_code == 500:
+        if r1 != None and r2!= None and r1.status_code == 403 and r2.status_code == 500:
             parser_ = response_parser(r2)
             self.result.append({
                 "name": self.name,
