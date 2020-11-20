@@ -41,6 +41,23 @@ class POC(PocBase):
             self.result += self.infopoc.result
         except:
             pass
+        # new way
+        self.infopoc = poc_info(copy.deepcopy(self.workdata))
+        self.infopoc.url = self.url + "../"
+        try:
+            self.infopoc.verify()
+            self.result += self.infopoc.result
+        except:
+            pass
+        # 这种回溯方法不是tomcat的 忘记是哪个中间件的特性了 也写这样了
+        self.infopoc = poc_info(copy.deepcopy(self.workdata))
+        self.infopoc.url = self.url[:-1] + ";/"
+        try:
+            self.infopoc.verify()
+            self.result += self.infopoc.result
+        except:
+            pass
+
         for res in self.result:
             res["name"] = self.name
             res["detail"]["vulmsg"] = self.vulmsg

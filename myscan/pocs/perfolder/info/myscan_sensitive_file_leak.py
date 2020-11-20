@@ -119,6 +119,8 @@ class POC():
              "vulmsg": "Jira Unauthenticated Popular Filters", "max_dir": 3},
             {"path": "dispatcher/invalidate.cache", "contains": b'<H1>OK</H1>',
              "vulmsg": "Jira Unauthenticated Popular Filters", "max_dir": 3,"state_code": "200"},
+            {"path": "env", "contains": b'java.vm.version',
+             "vulmsg": "spring boot api", "max_dir": 3, "state_code": "200"},
 
         ]
 
