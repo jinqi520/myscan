@@ -24,7 +24,7 @@ from myscan.lib.hostscan.start_input import start_input
 def main():
     set_paths(os.path.dirname(os.path.realpath(__file__)))
     init_options()
-    if cmd_line_options.command in ["webscan","hostscan"] :
+    if cmd_line_options.command in ["webscan","hostscan"]:
         logger.info("Start {} mode".format(cmd_line_options.command))
         set_conn()
         cleandb()
@@ -36,6 +36,7 @@ def main():
     elif cmd_line_options.command == "reverse":
         logger.info("Start reverse mode")
         reverse_start()
+
 
 if __name__ == '__main__':
     main()

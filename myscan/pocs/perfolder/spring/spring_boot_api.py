@@ -26,10 +26,10 @@ class POC():
         if self.url.count("/") > int(scan_set.get("max_dir", 2)) + 2:
             return
         list = [
-                "/env",
-                "/actuator/env",
-                "/appenv",
-                "/actuator/appenv"
+                "env",
+                "actuator/env",
+                "appenv",
+                "actuator/appenv"
                     ]
         for i in list:
             req = {
