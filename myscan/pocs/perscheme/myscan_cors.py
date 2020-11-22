@@ -54,11 +54,11 @@ class POC():
                 if "origin" in k.lower():
                     if v.count(".")<2: # 防止后续切割'.'错误
                         v+=".com.cn"
-                    host=".".join(v.split(".")[-2:])
+                    host = ".".join(v.split(".")[-2:])
                     request_headers_forpayload=copy.deepcopy(request_headers)
                     fake_origin=(v+"."+get_random_str(3)+host).lower()
                     request_headers_forpayload[k]=fake_origin
-                    req=parser.generaterequest({"headers": request_headers_forpayload})
+                    req = parser.generaterequest({"headers": request_headers_forpayload})
                     r = request(**req)
                     if r!=None:
                         if r.headers:
