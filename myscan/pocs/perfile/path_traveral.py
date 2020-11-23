@@ -26,7 +26,7 @@ class POC():
     def verify(self):
         if self.dictdata.get("url").get("url").count("/") >= 4 and self.dictdata.get("url").get("extension") in ["js", "css"] and self.dictdata.get("response").get("status") == 200:
             number = self.dictdata.get("url").get("url").count("/") - 2
-            headers = self.dictdata.request.get("headers")
+            headers = self.dictdata.get("request").get("headers")
             resp = requests.get(self.url + ";/env", headers=headers)
             if resp.status_code == 200 and "java.vm.version" in resp.text:
                 self.result.append({
