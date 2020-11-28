@@ -35,7 +35,7 @@ class POC():
         parser = dictdata_parser(self.dictdata)
         if parser.url.get("url").count("/") > int(scan_set.get("max_dir", 2)) + 2:
             return
-        if parser.response is not None and parser.response.status != 200:
+        if parser.response is not None and parser.response['status'] != 200:
             return
         url = parser.url.get("url")
         headers = parser.request.get("headers")
